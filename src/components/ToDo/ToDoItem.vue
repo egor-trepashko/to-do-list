@@ -125,7 +125,7 @@ export default {
     position: absolute;
     left: 0px;
     top: 12px;
-    background-image: url("~@/assets/img/Frame 415.svg");
+    background-image: url("~@/assets/img/Frame415.svg");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     opacity: 0;
