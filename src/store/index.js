@@ -31,7 +31,7 @@ class ToDoList {
   getView() {
     let result = this.get();
     if (this.view !== 'all') {
-      result = (this.view === 'active') ? result.filter(el => el.status === true) : result.filter(el => el.status === false)
+      result = (this.view === 'active') ? result.filter(el => el.status === false) : result.filter(el => el.status === true)
     }
     return result
   }

@@ -25,7 +25,7 @@ export default {
   methods: {
     ...mapActions(["CLEAR_ALL_TODO_LIST", "CHECK_ALL_TODO_LIST"]),
     ...mapMutations(["CHANGE_VIEW"]),
-    test(value) {
+    changeControlView(value) {
       this.CHANGE_VIEW(value)
     },
 
@@ -47,19 +47,19 @@ export default {
           class: "view-hide",
           classDefault: "",
           disabled: true,
-          event: this.test
+          event: this.changeControlView
         },
         active: {
           title: "Active",
           class: "view-hide",
           disabled: true,
-          event: this.test
+          event: this.changeControlView
         },
         complited: {
           title: "Complited",
           class: "view-hide",
           disabled: true,
-          event: this.test
+          event: this.changeControlView
         },
         clear: {
           title: "Clear complited",
