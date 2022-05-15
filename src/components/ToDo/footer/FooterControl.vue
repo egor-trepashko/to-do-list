@@ -26,10 +26,8 @@ export default {
     ...mapActions(["CLEAR_ALL_TODO_LIST", "CHECK_ALL_TODO_LIST"]),
     ...mapMutations(["CHANGE_VIEW"]),
     changeControlView(value) {
-      this.CHANGE_VIEW(value)
-    },
-
-
+      this.CHANGE_VIEW(value);
+    }
   },
   computed: {
     ...mapGetters(["TODO_LIST", "TODO_VIEW_STATE"]),
@@ -110,14 +108,35 @@ export default {
     font-weight: 600;
     font-size: 13px;
     line-height: 16px;
+    @include _510 {
+      font-size: 0.75em;
+      padding: 0 10px !important;
+    }
+    @include _430 {
+      font-size: 0.7em;
+      padding: 0 3px !important;
+      min-width: 60px !important;
+    }
     &.view-hide {
       opacity: 0;
     }
     &.margin-rigth {
       margin-right: 10px;
+      @include _510 {
+        margin-right: 7px;
+      }
+      @include _430 {
+        margin-right: 5px;
+      }
     }
     &.margin-left {
       margin-left: 10px;
+      @include _510 {
+        margin-left: 7px;
+      }
+      @include _430 {
+        margin-left: 5px;
+      }
     }
   }
 }

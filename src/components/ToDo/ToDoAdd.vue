@@ -1,19 +1,15 @@
 <template>
   <div class="todo-add">
-    <v-text-field 
-      v-model="input" 
-      :label="$t('Add new todo...')" 
-      height="40px" 
-      dense 
+    <v-text-field
+      v-model="input"
+      :label="$t('Add new todo...')"
+      height="40px"
+      dense
       solo
       @keydown.enter="() => {input !== '' ? AddToDoList() : false}"
     ></v-text-field>
     <v-slide-x-reverse-transition>
-      <v-btn 
-        v-if="input != ''" 
-        color="primary" 
-        @click="AddToDoList"
-      >{{$t('Submit')}}</v-btn>
+      <v-btn v-if="input != ''" color="primary" @click="AddToDoList">{{$t('Submit')}}</v-btn>
     </v-slide-x-reverse-transition>
   </div>
 </template>
@@ -22,35 +18,26 @@
 import { mapGetters, mapMutations, mapActions } from "vuex";
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
-      ...mapGetters([
-          "TODO_NEW"
-      ]),
+    ...mapGetters(["TODO_NEW"]),
     input: {
       get() {
         return this.TODO_NEW;
       },
       set(value) {
-        this.CHANGE_TODO_NEW(value)
+        this.CHANGE_TODO_NEW(value);
         this.inn = value;
       }
     }
   },
   methods: {
-      ...mapMutations([
-          "CHANGE_TODO_NEW",
-      ]),
-      ...mapActions([
-          "ADD_TODO_LIST"
-      ]),
-      AddToDoList() {
-          this.ADD_TODO_LIST()
-      }
-
-
+    ...mapMutations(["CHANGE_TODO_NEW"]),
+    ...mapActions(["ADD_TODO_LIST"]),
+    AddToDoList() {
+      this.ADD_TODO_LIST();
+    }
   }
 };
 </script>
@@ -62,6 +49,10 @@ export default {
   transition: 0.3s;
   margin-top: 52px;
   margin-bottom: 38px;
+  @include _510 {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .v-input {
     font-size: 14px;
     font-weight: 400;
@@ -89,9 +80,9 @@ export default {
     font-weight: 600;
     font-size: 13px;
     line-height: 16px;
-    
+
     &:not(.v-btn--round).v-size--default {
-        height: 40px;
+      height: 40px;
     }
   }
 }

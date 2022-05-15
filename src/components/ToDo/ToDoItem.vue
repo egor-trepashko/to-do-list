@@ -26,9 +26,9 @@
           text
           @click="dialog = false"
         >{{$t("Cancel")}}</v-btn>
-        <v-btn 
-          v-else 
-          color="primary" 
+        <v-btn
+          v-else
+          color="primary"
           @click="changeItem"
           :disabled="inputChange == ''"
         >{{$t("Save")}}</v-btn>
@@ -150,6 +150,9 @@ export default {
   border-radius: 17px;
   box-shadow: none;
   padding: 40px 30px;
+  @include _510 {
+    padding: 30px 10px;
+  }
   .v-input {
     font-size: 14px;
     font-weight: 400;

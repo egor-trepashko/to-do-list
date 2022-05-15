@@ -21,6 +21,10 @@ export default {
   width: 190px;
   height: 85px;
   padding: 16px;
+  @include _430 {
+      width: calc(50% - 16px);
+      min-width: 130px;
+    }
   .item {
     &__total {
       font-weight: 600;

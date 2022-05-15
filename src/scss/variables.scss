@@ -1,2 +1,25 @@
 $btn-text-transform: none;
 $btn-border-radius: 8px;
+
+@mixin _767 {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin _510 {
+    @media (max-width: 510px) {
+        @content;
+    }
+}
+@mixin _430 {
+    @media (max-width: 430px) {
+        @content;
+    }
+}
+
+@mixin _350 {
+    @media (max-width: 350px) {
+        @content;
+    }
+}

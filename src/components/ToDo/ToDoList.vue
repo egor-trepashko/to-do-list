@@ -72,6 +72,9 @@ export default {
     padding: 8px 0;
     position: static;
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include _430 {
+      width: calc(100% - 10px);
+    }
     &::-webkit-scrollbar {
       width: 4px;
       background-color: #f9f9fd;

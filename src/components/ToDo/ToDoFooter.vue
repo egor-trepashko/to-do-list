@@ -60,6 +60,9 @@ export default {
   }
   &-stat {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
     &__item {
       margin: 15px 8px;
     }

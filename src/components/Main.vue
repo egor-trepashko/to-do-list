@@ -57,9 +57,13 @@ export default {
         #8eddf5 80.73%,
         #8fd3f4 100%
       );
+      @include _430 {
+      width: calc(100% - 10px);
+    }  
   }
   &__layer {
     max-width: 730px;
+    min-width: 500px;
     min-height: calc(100vh - 91px - 90px);
     margin: 90px;
     width: 100%;
@@ -68,6 +72,13 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    @include _510 {
+      margin: 5px;
+      min-width: auto
+    }
+    @include _430 {
+      min-width: auto;
+    }
   }
 }
 </style>
