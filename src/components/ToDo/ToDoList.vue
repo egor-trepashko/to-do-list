@@ -72,6 +72,21 @@ export default {
     padding: 8px 0;
     position: static;
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: #f9f9fd;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: rgba(32, 36, 39, 0.1);
+    }
+
+    &::-webkit-scrollbar-track {
+      // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background-color: #f9f9fd;
+    }
   }
 }
 </style>
