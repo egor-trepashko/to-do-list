@@ -26,7 +26,12 @@
           text
           @click="dialog = false"
         >{{$t("Cancel")}}</v-btn>
-        <v-btn v-else color="primary" @click="changeItem">{{$t("Save")}}</v-btn>
+        <v-btn 
+          v-else 
+          color="primary" 
+          @click="changeItem"
+          :disabled="inputChange == ''"
+        >{{$t("Save")}}</v-btn>
       </div>
     </v-dialog>
   </v-list-item>
@@ -59,11 +64,14 @@ export default {
       this.CHANGE_STATUS_ITEM_TODO_LIST({ key: id, value });
     },
     enterInput() {
-        if (this.inputChange == this.text) {
-            this.dialog = false;
-        } else {
-            this.changeItem()
-        }
+      if (this.inputChange == "") {
+        return false;
+      }
+      if (this.inputChange == this.text) {
+        this.dialog = false;
+      } else {
+        this.changeItem();
+      }
     },
     changeItem() {
       this.CHANGE_TEXT_ITEM_TODO_LIST({ key: this.id, text: this.inputChange });
